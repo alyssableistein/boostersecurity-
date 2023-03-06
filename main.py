@@ -24,15 +24,17 @@ def checkPassword():
                 messagebox.showinfo("Error", "Please enter a password with 12 or more characters.") #prompt user for more characters
     elif not re.search("[a-z]", enter.get()): #check for lowercase letters
                 messagebox.showinfo("Error", "Please enter a password with at least one lowercase letter.") #prompt user to use a lowercase letter
+    elif not re.search("[A-Z]", enter.get()): #check for uppercase letters
+                messagebox.showinfo("Error", "Please enter as password with at least one uppercase letter") #prompt user to use a uppercase letter
     elif not re.search("[0-9]", enter.get()): #check for numbers in password
-                messagebox.showinfo("Eror", "Please enter a password with at least one number.") #prompt user to enter a number
+                messagebox.showinfo("Error", "Please enter a password with at least one number.") #prompt user to enter a number
     elif re.search("\s" , enter.get()): #check for spacing
                 messagebox.showinfo("Error", "Please enter a password with no spaces.") #prompt user to not enter spaces
     elif not re.search("[_@$]" , enter.get()): #check for special characters
                 messagebox.showinfo("Error", "Please enter at least one character being a valid special character.") #prompt user to input a valid special character
 
 
-header = tk.Label(interface, text="Booster Security+", font=("Arial", 25, "bold")) #create a top header with tool name
+header = tk.Label(interface, text="Booster Security+", font=("Arial", 25, "bold"))#create a top header with tool name
 header.pack(ipadx=20, ipady=20) #display onto the screen and set the padding for x & y coordinates 
 
 inputText = Label(interface, text="Please enter a password to test the strength:", font=("Arial", 12)) #prompt user to enter text
