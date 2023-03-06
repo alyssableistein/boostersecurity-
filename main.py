@@ -1,30 +1,44 @@
 from tkinter import *
-from tkinter import ttk
 import tkinter as tk
 
-import random
-import time
-import datetime
-import math
-import base64
-import hashlib
+interface = tk.Tk()
+interface.title("Prototype")  # Interface title
+interface.geometry("1280x720")  # Interface size
 
-Interface = Tk()
-Interface.title("Prototype")  # Interface title
-Interface.geometry("600x400")  # Interface size
+# create label with project title
+projectTitle = Label(interface, text="Welcome To Booster Security+!", font='Arial 30 bold')
+# send label text to be seen on the interface
+projectTitle.pack()
 
-# bottomframe = Frame(Interface)
-# bottomframe.pack(side=BOTTOM)
+# create label to tell users to enter their password to check
+userPass = Label(interface, text="Please enter password to check:", font='Arial 15')
+#send label text to be seen on the interface
+userPass.pack()
+
+# this will be the user's password entered in as an entry
+e = Entry(interface, width=80)
+e.pack() 
+
+#
+def enterButtonClicked():
+    userPassword = Label(interface, text=e.get())
+    userPassword.pack()
+enterButton = tk.Button(interface, text="Enter", width="15", font="Arial 18", command=enterButtonClicked)
+enterButton.pack()
+
+interface.mainloop()
 
 
 
-# def update_width():
-#     frame.config(width=100)
 
 
-Label(Interface, text='Enter Password').grid(row=5)
-e1 = Entry(Interface)
-e1.grid(row=5, column=1)
+
+
+
+
+
+
+
 
 # String Variable Initialization
 rand = StringVar()
