@@ -1,30 +1,32 @@
 from tkinter import *
+from getpass import getpass
 import tkinter as tk
+from tkinter import messagebox
+import re
 
 interface = tk.Tk()
 interface.title("Prototype")  # Interface title
-interface.geometry("1280x720")  # Interface size
+interface.geometry("1000x700")  # Interface size
 
-# create label with project title
-projectTitle = Label(interface, text="Welcome To Booster Security+!", font='Arial 30 bold')
-# send label text to be seen on the interface
-projectTitle.pack()
 
-# create label to tell users to enter their password to check
-userPass = Label(interface, text="Please enter password to check:", font='Arial 15')
-#send label text to be seen on the interface
-userPass.pack()
 
-# this will be the user's password entered in as an entry
-e = Entry(interface, width=80)
-e.pack() 
+def checkPassword():
+    if enter.get() == "":
+        messagebox.showinfo("Error", "Please enter a password to check.")
+    elif (len(enter.get())) < 12:
+                messagebox.showinfo("Error", "Please enter a password with 12 or more characters.")
 
-#
-def enterButtonClicked():
-    userPassword = Label(interface, text=e.get())
-    userPassword.pack()
-enterButton = tk.Button(interface, text="Enter", width="15", font="Arial 18", command=enterButtonClicked)
-enterButton.pack()
+header = tk.Label(interface, text="Booster Security+", font=("Arial", 25, "bold"))
+header.pack(ipadx=20, ipady=20)
+
+inputText = Label(interface, text="Please enter password to check:", font=("Arial", 12))
+inputText.pack(ipadx=10, ipady=10)
+
+enter = tk.Entry(interface)
+enter.pack(ipadx=10, ipady=10)
+
+enterButton = Button(interface, text="Check Password", font=("Arial", 12), command=checkPassword)
+enterButton.pack(ipadx=5, ipady=5)
 
 interface.mainloop()
 
@@ -38,8 +40,7 @@ interface.mainloop()
 
 
 
-
-
+"""
 # String Variable Initialization
 rand = StringVar()
 Msg = StringVar()
@@ -59,7 +60,6 @@ def Reset():
 
 # Labels
 
-"""
 textInp = Label(Interface, font = ('arial', 20, 'bold'),
                 text="Enter your Plaintext:", bd = 10, anchor = "w")
 
@@ -81,6 +81,6 @@ textOut = Entry(encoder, font = ('arial', 16, 'bold'),
                 textvariable = Result, bd = 10, insertwidth = 6,
                 justify = 'left')
 
-textOut.grid(row = 4, column = 1) """
+textOut.grid(row = 4, column = 1)
 
-Interface.mainloop()
+Interface.mainloop()"""
