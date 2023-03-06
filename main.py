@@ -19,9 +19,11 @@ def checkPassword():
         messagebox.showinfo("Error", "Please enter a password to check.")
     elif (len(enter.get())) < 12:
                 messagebox.showinfo("Error", "Please enter a password with 12 or more characters.")
-    elif (len(enter.get())) < 12:
-                messagebox.showinfo("Error", "Please enter a password with 12 or more characters.")
-
+    elif not re.search("[a-z]", enter.get()):
+                messagebox.showinfo("Error", "Please enter a password with at least one lowercase letter.")
+    elif not re.search("[0-9]", enter.get()):
+                messagebox.showinfo("Eror", "Please enter a password with at least one number")
+            
 header = tk.Label(interface, text="Booster Security+", font=("Arial", 25, "bold"))
 header.pack(ipadx=20, ipady=20)
 
